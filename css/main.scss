@@ -1,0 +1,234 @@
+@mixin desktop {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin iphone {
+    @media (max-width: 375px) {
+        @content;
+    }
+}
+
+@mixin pixel {
+    @media (max-width: 548px) {
+        @content;
+    }
+}
+
+.hero-section {
+    display: flex;
+    background-color: #FEFAF5;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    position: relative;
+
+    &__main-col {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        color: #335576;
+        font-size: 2.2rem;
+        width: 75%;
+        margin-top: 6rem;
+        text-align: left;
+
+        @include tablet {
+            font-size: 1.5rem;
+            width: 100%;
+        }
+
+        @include pixel {
+            font-size: 1rem;
+        }
+    }
+
+    &__description {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: #335576;
+        width: 75%;
+        margin-top: 0;
+        text-align: left;
+
+        @include tablet {
+            width: 100%;
+        }
+    }
+
+    &__img {
+        height: 20rem;
+        margin-top: 3rem;
+        margin-bottom: 6rem;
+
+        @include tablet {
+            margin-left: 15%;
+        }
+
+        @include pixel {
+            height: 10rem;
+            display: none;
+        }
+
+        @include iphone {
+            display: none;
+        }
+    }
+
+    &__button {
+        display: inline-block;
+        font-size: 0.85rem;
+        background-color: #DB7A4E;
+        color: #fff;
+        border: none;
+        border-radius: 25px;
+        width: 9.5rem;
+        padding: 0.6rem 0;
+        transition: transform 0.3s ease 0s;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    &__button:hover {
+        color: #FFF;
+        font-weight: bold;
+        transform: translateY(-10px);
+    }
+
+}
+
+.recs-section {
+    background-color: #FFF;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    position: relative;
+
+    &__title {
+        color: #335576;
+        font-size: 1.4rem;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    &__cards-layout {
+        display: flex;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 5rem;
+    }
+
+    &__card {
+        margin: 0;
+        position: relative;
+    }
+
+    &__img {
+        width: 16rem;
+        height: 24.5rem;
+        border-radius: 5px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        transition: transform 0.5s ease;
+    }
+
+    &__img:hover {
+        opacity: 50%;
+        border: 3px solid #FFF;
+    }
+
+    &__card-name {
+        position: absolute;
+        bottom: 0px;
+        right: 17px;
+        color: #FFF;
+        font-size: 1.35rem;
+    }
+}
+
+.newsletter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 3rem;
+    padding-left: 4rem;
+    background: #FEFAF5;
+
+    &__title {
+        color: #335576;
+        font-size: 1.4rem;
+    }
+
+    &__button {
+        font-size: 0.85rem;
+        background-color: #DB7A4E;
+        color: #fff;
+        border: none;
+        border-radius: 25px;
+        width: 7rem;
+        padding: 0.3rem 0;
+        transition: transform 0.3s ease 0s;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    &__button:hover {
+        color: #FFF;
+        font-weight: bold;
+        border: 3px solid #ff7300;
+        transform: translateY(-10px);
+    }
+}
+
+.destination {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:#335576;
+    font-weight: bold;
+    background-image: url(../assets/images/Images/plane-background.jpg);
+    background-position:right;
+
+    &__title {
+        color: #335576;
+        font-size: 1.4rem;
+    }
+
+    &__info, &__info input, &__info textarea {
+        width: 80%;
+        padding: 0.625rem;
+        color:#335576;
+        margin: 0.5rem 0;
+    }
+
+    &__button {
+        font-size: 0.85rem;
+        background-color: #DB7A4E;
+        color: #fff;
+        border: none;
+        border-radius: 25px;
+        width: 7rem;
+        padding: 0.3rem 0;
+        transition: transform 0.3s ease 0s;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    &__button:hover {
+        color: #FFF;
+        font-weight: bold;
+        border: 3px solid #ff7300;
+        transform: translateY(-10px);
+    }
+}
+
